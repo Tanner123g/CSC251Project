@@ -5,7 +5,6 @@ public class Project_tanner_gleason
    public static void main(String[] args)
    {
       int number;
-      int bmi = 0;
       String providerName;
       String firstName;
       String lastName;
