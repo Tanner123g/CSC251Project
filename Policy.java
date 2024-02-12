@@ -65,7 +65,7 @@ public class Policy
       providerName = provName;
    }
    /**
-      policyholder's first name mutator.
+      policyholder's first name mutator
       @param fName the policyholder's first name
    */
    public void setFirstName(String fName)
@@ -73,7 +73,7 @@ public class Policy
       firstName = fName;
    }
    /**
-      policyholder's last name mutator.
+      policyholder's last name mutator
       @param lName the policyholder's last name
    */
    public void setLastName(String lName)
@@ -81,7 +81,7 @@ public class Policy
       lastName = lName;
    }
    /**
-      policyholder's age mutator.
+      policyholder's age mutator
       @param a the policyholder's age
    */
    public void setAge(int a)
@@ -89,7 +89,7 @@ public class Policy
       age = a;
    }
    /**
-      policyholder's smoking status mutator.
+      policyholder's smoking status mutator
       @param s the policyholder's smoking status
    */
    public void setSmoker(String s)
@@ -205,7 +205,7 @@ public class Policy
       }
       if (getBMI() > 35) // gets BMI and if over 35 adds fee
       {
-         additionalFee += (getBMI() - 35) * 20;
+         additionalFee += (getBMI() - 35) * 20; // BMI fee calculation
       }
       
       return additionalFee + BASE_FEE;
