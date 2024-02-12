@@ -8,7 +8,6 @@ public class Policy
    private String smokingStatus;
    private float height;
    private float weight;
-   private int bmi;
    
    /**
       no-arg constructor
