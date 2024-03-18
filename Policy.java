@@ -6,8 +6,8 @@ public class Policy
    private String lastName;
    private int age;
    private String smokingStatus;
-   private float height;
-   private float weight;
+   private double height;
+   private double weight;
    
    /**
       No-Arg Constructor
@@ -178,7 +178,7 @@ public class Policy
       The getHeight method returns the policyholder's height.
       @return The policyholder's height.
    */
-   public float getHeight()
+   public double getHeight()
    {
       return height;
    }
@@ -187,7 +187,7 @@ public class Policy
       The getWeight method returns the policyholder's weight.
       @return The policyholder's weight.
    */
-   public float getWeight()
+   public double getWeight()
    {
       return weight;
    }
@@ -196,7 +196,7 @@ public class Policy
       The getBMI method calulates and returns the policyholder's BMI.
       @return The policyholder's BMI.
    */
-   public float getBMI()
+   public double getBMI()
    {
       final double WEIGHT_MULTIPLIER = 703;
       return (weight * WEIGHT_MULTIPLIER) / (height * height);
@@ -205,7 +205,7 @@ public class Policy
       The getPrice method determines and returns the price of the polcy.
       @return The price of the insurance policy.
    */
-   public float getPrice()
+   public double getPrice()
    {
       final int BASE_FEE = 600;
       final int AGE_FEE = 75;
