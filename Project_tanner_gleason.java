@@ -14,8 +14,13 @@ public class Project_tanner_gleason
       String smokingStatus;
       float height;
       float weight;
+      int smokerCount = 0;
+      int nonSmokerCount = 0;
       
       final String FILE_NAME = "PolicyInformation.txt";
+      final String SMOKER = "smoker";
+      final String NONSMOKER = "non-smoker";
+      final int INCREMENT_AMT = 1;
       
       File file = new File(FILE_NAME);
       Scanner inputFile = new Scanner(file);
@@ -26,7 +31,7 @@ public class Project_tanner_gleason
       {
       // prompts user input and stores input in respective variables
          number = inputFile.nextInt();
-         inputFile.nextLine(); // consume newline
+         inputFile.nextLine();
          
          providerName = inputFile.nextLine();
          
@@ -47,5 +52,33 @@ public class Project_tanner_gleason
          policies.add(new Policy(number, providerName, firstName, lastName, age, smokingStatus, height, weight));
       }
       while (inputFile.hasNext());
+      
+      for (int i = 0; i < policies.size(); i++)
+      {
+         Policy policy = policies.get(i); // 
+         
+         // prints values using respective accessor methods
+         System.out.println("Policy Number: " + policy.getNumber());
+         System.out.println("\nProvider Name: " + policy.getProviderName());
+         System.out.println("\nPolicyholder's First Name: " + policy.getFirstName());
+         System.out.println("\nPolicyholder's Last Name: " + policy.getLastName());
+         System.out.println("\nPolicyholder's Age: " + policy.getAge());
+         System.out.println("\nPolicyholder's Smoking Status: " + policy.getSmokingStatus());
+         System.out.printf("\nPolicyholder's Height: %,.1f\n", policy.getHeight());
+         System.out.printf("\nPolicyholder's Weight: %,.1f\n", policy.getWeight());
+         System.out.printf("\nPolicyholder's BMI: %,.2f\n", policy.getBMI());
+         System.out.printf("\nPolicy Price: $%,.2f\n\n\n", policy.getPrice());
+         
+         if (policy.getSmokingStatus().equalsIgnoreCase("SMOKER"))
+         {
+            smokerCount += 1;
+         }
+         else
+         {
+            nonSmokerCount += 1;
+         }
+      }
+      System.out.println("The number of policies with a smoker is: " + smokerCount);
+      System.out.println("The number of policies with a non-smoker is: " + nonSmokerCount);
    }
 }
