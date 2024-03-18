@@ -22,7 +22,6 @@ public class Policy
       smokingStatus = "N/A";
       height = 0;
       weight = 0;
-      
    }
    
    /**

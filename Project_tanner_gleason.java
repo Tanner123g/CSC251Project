@@ -6,6 +6,7 @@ public class Project_tanner_gleason
 {
    public static void main(String[] args) throws IOException
    {
+      // declare variables
       int number;
       String providerName;
       String firstName;
@@ -17,19 +18,20 @@ public class Project_tanner_gleason
       int smokerCount = 0;
       int nonSmokerCount = 0;
       
+      // declare constants
       final String FILE_NAME = "PolicyInformation.txt";
       final String SMOKER = "smoker";
       final String NONSMOKER = "non-smoker";
       final int INCREMENT_AMT = 1;
       
-      File file = new File(FILE_NAME);
-      Scanner inputFile = new Scanner(file);
-      ArrayList<Policy> policies = new ArrayList<Policy>();
+      File file = new File(FILE_NAME); // create file object
+      Scanner inputFile = new Scanner(file); // create scanner object with file object
+      ArrayList<Policy> policies = new ArrayList<Policy>(); // create array to store policy information
       
       // loop that repeats until file ends
       do
       {
-      // prompts user input and stores input in respective variables
+         // stores input from file
          number = inputFile.nextInt();
          inputFile.nextLine();
          
@@ -48,14 +50,15 @@ public class Project_tanner_gleason
 
          weight = inputFile.nextFloat();
          
-         // creates policy object using values from user input
+         // adds policy object to array using values from file
          policies.add(new Policy(number, providerName, firstName, lastName, age, smokingStatus, height, weight));
       }
       while (inputFile.hasNext());
       
+      // loop that repeats for length of policies array
       for (int i = 0; i < policies.size(); i++)
       {
-         Policy policy = policies.get(i); // 
+         Policy policy = policies.get(i); // variable to reference specific policy
          
          // prints values using respective accessor methods
          System.out.println("Policy Number: " + policy.getNumber());
@@ -69,6 +72,7 @@ public class Project_tanner_gleason
          System.out.printf("Policyholder's BMI: %,.2f\n", policy.getBMI());
          System.out.printf("Policy Price: $%,.2f\n\n", policy.getPrice());
          
+         // count number of smokers and non-smokers
          if (policy.getSmokingStatus().equals(SMOKER))
          {
             smokerCount += 1;
@@ -78,6 +82,8 @@ public class Project_tanner_gleason
             nonSmokerCount += 1;
          }
       }
+      
+      // print number of smokers and non-smokers
       System.out.println("The number of policies with a smoker is: " + smokerCount);
       System.out.println("The number of policies with a non-smoker is: " + nonSmokerCount);
    }
