@@ -69,7 +69,7 @@ public class Project_tanner_gleason
          System.out.printf("Policyholder's BMI: %,.2f\n", policy.getBMI());
          System.out.printf("Policy Price: $%,.2f\n\n", policy.getPrice());
          
-         if (policy.getSmokingStatus().equalsIgnoreCase("SMOKER"))
+         if (policy.getSmokingStatus().equals(SMOKER))
          {
             smokerCount += 1;
          }
