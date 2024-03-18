@@ -59,15 +59,15 @@ public class Project_tanner_gleason
          
          // prints values using respective accessor methods
          System.out.println("Policy Number: " + policy.getNumber());
-         System.out.println("\nProvider Name: " + policy.getProviderName());
-         System.out.println("\nPolicyholder's First Name: " + policy.getFirstName());
-         System.out.println("\nPolicyholder's Last Name: " + policy.getLastName());
-         System.out.println("\nPolicyholder's Age: " + policy.getAge());
-         System.out.println("\nPolicyholder's Smoking Status: " + policy.getSmokingStatus());
-         System.out.printf("\nPolicyholder's Height: %,.1f\n", policy.getHeight());
-         System.out.printf("\nPolicyholder's Weight: %,.1f\n", policy.getWeight());
-         System.out.printf("\nPolicyholder's BMI: %,.2f\n", policy.getBMI());
-         System.out.printf("\nPolicy Price: $%,.2f\n\n\n", policy.getPrice());
+         System.out.println("Provider Name: " + policy.getProviderName());
+         System.out.println("Policyholder's First Name: " + policy.getFirstName());
+         System.out.println("Policyholder's Last Name: " + policy.getLastName());
+         System.out.println("Policyholder's Age: " + policy.getAge());
+         System.out.println("Policyholder's Smoking Status: " + policy.getSmokingStatus());
+         System.out.printf("Policyholder's Height: %,.1f\n", policy.getHeight());
+         System.out.printf("Policyholder's Weight: %,.1f\n", policy.getWeight());
+         System.out.printf("Policyholder's BMI: %,.2f\n", policy.getBMI());
+         System.out.printf("Policy Price: $%,.2f\n\n", policy.getPrice());
          
          if (policy.getSmokingStatus().equalsIgnoreCase("SMOKER"))
          {
