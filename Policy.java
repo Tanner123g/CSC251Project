@@ -12,7 +12,8 @@ public class Policy
    public Policy()
    {
       number = 0;
-      providerName = "N/A";
+      providerName = "";
+      policyHolder = new PolicyHolder();
       policyCount++;
    }
    
@@ -138,7 +139,7 @@ public class Policy
    {
       return String.format("Policy Number: " + number +
              "\nProvider Name: " + providerName + "\n" +
-             policyHolder.toString() +
+             policyHolder +
              "\nPolicy Price: $%,.2f\n", getPrice());
              
    }

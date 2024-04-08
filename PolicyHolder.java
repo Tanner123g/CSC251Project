@@ -12,10 +12,10 @@ public class PolicyHolder
    */
    public PolicyHolder()
    {
-      firstName = "N/A";
-      lastName = "N/A";
+      firstName = "";
+      lastName = "";
       age = 0;
-      smokingStatus = "N/A";
+      smokingStatus = "";
       height = 0;
       weight = 0;
    }

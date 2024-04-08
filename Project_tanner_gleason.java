@@ -21,8 +21,6 @@ public class Project_tanner_gleason
       // declare constants
       final String FILE_NAME = "PolicyInformation.txt";
       final String SMOKER = "smoker";
-      final String NONSMOKER = "non-smoker";
-      final int INCREMENT_AMT = 1;
       
       File file = new File(FILE_NAME); // create file object
       Scanner inputFile = new Scanner(file); // create scanner object with file object
@@ -50,8 +48,10 @@ public class Project_tanner_gleason
 
          weight = inputFile.nextFloat();
          
+         PolicyHolder policyHolder = new PolicyHolder(firstName, lastName, age, smokingStatus, height, weight);
+         
          // adds policy object to array using values from file
-         policies.add(new Policy(number, providerName, firstName, lastName, age, smokingStatus, height, weight));
+         policies.add(new Policy(number, providerName, policyHolder));
       }
       while (inputFile.hasNext());
       
@@ -60,29 +60,24 @@ public class Project_tanner_gleason
       {
          Policy policy = policies.get(i); // variable to reference specific policy
          
-         // prints values using respective accessor methods
-         System.out.println("Policy Number: " + policy.getNumber());
-         System.out.println("Provider Name: " + policy.getProviderName());
-         System.out.println("Policyholder's First Name: " + policy.getFirstName());
-         System.out.println("Policyholder's Last Name: " + policy.getLastName());
-         System.out.println("Policyholder's Age: " + policy.getAge());
-         System.out.println("Policyholder's Smoking Status: " + policy.getSmokingStatus());
-         System.out.printf("Policyholder's Height: %,.1f\n", policy.getHeight());
-         System.out.printf("Policyholder's Weight: %,.1f\n", policy.getWeight());
-         System.out.printf("Policyholder's BMI: %,.2f\n", policy.getBMI());
-         System.out.printf("Policy Price: $%,.2f\n\n", policy.getPrice());
+         System.out.println(policy);
          
-         // count number of smokers and non-smokers
-         if (policy.getSmokingStatus().equals(SMOKER))
+         PolicyHolder policyHolder = policy.getPolicyHolder();
+         
+         if (policyHolder.getSmokingStatus().equalsIgnoreCase(SMOKER))
          {
-            smokerCount += 1;
+            smokerCount++;
          }
+         
          else
          {
-            nonSmokerCount += 1;
+            nonSmokerCount++;
          }
       }
       
+
+      // print number of policy objects created
+      System.out.println("There were " + policies.get(0).getPolicyCount() + " Policy objects created.\n");
       // print number of smokers and non-smokers
       System.out.println("The number of policies with a smoker is: " + smokerCount);
       System.out.println("The number of policies with a non-smoker is: " + nonSmokerCount);
