@@ -183,6 +183,6 @@ public class PolicyHolder
              "\nPolicyholder's Smoking Status (Y/N): " + smokingStatus +
              "\nPolicyholder's Height: " + height +
              "\nPolicyholder's Weight: " + weight +
-             "\nPolicyHolder's BMI: %,.2f", getBMI()) ;
+             "\nPolicyHolder's BMI: %,.2f", getBMI());
    }
 }
