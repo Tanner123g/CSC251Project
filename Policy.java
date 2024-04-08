@@ -1,7 +1,9 @@
+
 public class Policy
 {
    private int number;
    private String providerName;
+   private PolicyHolder policyHolder;
    
    /**
    No-Arg Constructor
@@ -17,10 +19,11 @@ public class Policy
    @param num The policy number.
    @param provName The provider name.
    */
-   public Policy(int num, String provName, String fName, String lName, int a, String smoking, float h, float w)
+   public Policy(int num, String provName, PolicyHolder pHolder)
    {
       number = num;
       providerName = provName;
+      policyHolder = new PolicyHolder(pHolder);
    }
    
    /**
@@ -74,19 +77,31 @@ public class Policy
       final int BMI_FEE_MULTIPLIER = 20;
       float additionalFee = 0;
       
-      if (getAge() > AGE_FEE_MIN) // gets age and if over fifty adds fee
+      if (policyHolder.getAge() > AGE_FEE_MIN) // gets age and if over fifty adds fee
       {
          additionalFee += AGE_FEE;
       }
-      if (getSmokingStatus().equalsIgnoreCase("smoker")) // gets smoking status and if smoker adds fee
+      if (policyHolder.getSmokingStatus().equalsIgnoreCase("smoker")) // gets smoking status and if smoker adds fee
       {
          additionalFee += SMOKER_FEE;
       }
-      if (getBMI() > BMI_FEE_MIN) // gets BMI and if over 35 adds fee
+      if (policyHolder.getBMI() > BMI_FEE_MIN) // gets BMI and if over 35 adds fee
       {
-         additionalFee += (getBMI() - BMI_FEE_MIN) * BMI_FEE_MULTIPLIER; // BMI fee calculation
+         additionalFee += (policyHolder.getBMI() - BMI_FEE_MIN) * BMI_FEE_MULTIPLIER; // BMI fee calculation
       }
       
       return additionalFee + BASE_FEE;
+   }
+   /**
+   The toString method returns data relevant to the Policy instance as a string.
+   @return The data stored in the Policy class as a string.
+   */
+   public String toString()
+   {
+      return String.format("Policy Number: " + number +
+             "\nProvider Name: " + providerName + "\n" +
+             policyHolder.toString() +
+             "\nPolicy Price: $%,.2f\n", getPrice());
+             
    }
 }
