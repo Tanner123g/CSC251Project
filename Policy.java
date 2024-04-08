@@ -4,14 +4,16 @@ public class Policy
    private int number;
    private String providerName;
    private PolicyHolder policyHolder;
+   private static int policyCount = 0;
    
    /**
-   No-Arg Constructor
+   No argument constructor.
    */
    public Policy()
    {
       number = 0;
       providerName = "N/A";
+      policyCount++;
    }
    
    /**
@@ -24,6 +26,7 @@ public class Policy
       number = num;
       providerName = provName;
       policyHolder = new PolicyHolder(pHolder);
+      policyCount++;
    }
    
    /**
@@ -36,7 +39,7 @@ public class Policy
    }
    
    /**
-   the setProviderName method sets the provider's name.
+   The setProviderName method sets the provider's name.
    @param provName The provider name.
    */
    public void setProviderName(String provName)
@@ -44,6 +47,23 @@ public class Policy
       providerName = provName;
    }
    
+   /**
+   The setPolicyHolder method sets the PolicyHolder field to another instance of the PolicyHolder class.
+   @param pHolder The PolicyHolder instance.
+   */
+   public void setPolicyHolder(PolicyHolder pHolder)
+   {
+      policyHolder = pHolder;
+   }
+   
+   /**
+   The setPolicyCount method sets the number of Policy objects that have been created.
+   @param pCount The number of Policy objects that have been created.
+   */
+   public void setPolicyCount(int pCount)
+   {
+      policyCount = pCount;
+   }
    
    /**
    The getNumber method returns the policyholder's policy number.
@@ -61,6 +81,24 @@ public class Policy
    public String getProviderName()
    {
       return providerName;
+   }
+   
+   /**
+   The getPolicyHolder method returns a copy of the instance of the PolicyHolder class stored in the policyHolder field.
+   @return a copy of the instance of the PolicyHolder class stored in the policyHolder field.
+   */
+   public PolicyHolder getPolicyHolder()
+   {
+      return new PolicyHolder(policyHolder);
+   }
+   
+   /**
+   The getPolicyCount method returns the number of Policy objects that have been created.
+   @return the number of policy objects that have been created.
+   */
+   public int getPolicyCount()
+   {
+      return policyCount;
    }
    
    /**
