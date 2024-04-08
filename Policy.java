@@ -1,10 +1,9 @@
-
 public class Policy
 {
    private int number;
    private String providerName;
    private PolicyHolder policyHolder;
-   private static int policyCount = 0;
+   private static int policyCount = 0; // static field to count number of policy objects created
    
    /**
    No argument constructor.

@@ -60,21 +60,20 @@ public class Project_tanner_gleason
       {
          Policy policy = policies.get(i); // variable to reference specific policy
          
-         System.out.println(policy);
+         System.out.println(policy); // implicit toString method call
          
-         PolicyHolder policyHolder = policy.getPolicyHolder();
+         PolicyHolder policyHolder = policy.getPolicyHolder(); // variable to store copy of PolicyHolder object
          
+         // if statement to check if policy holder is a smoker and increment the proper variable
          if (policyHolder.getSmokingStatus().equalsIgnoreCase(SMOKER))
          {
             smokerCount++;
          }
-         
          else
          {
             nonSmokerCount++;
          }
       }
-      
 
       // print number of policy objects created
       System.out.println("There were " + policies.get(0).getPolicyCount() + " Policy objects created.\n");
