@@ -10,30 +10,30 @@ public class Policy
    private double weight;
    
    /**
-      No-Arg Constructor
+   No-Arg Constructor
    */
    public Policy()
    {
       number = 0;
-      providerName = "N/A";
-      firstName = "N/A";
-      lastName = "N/A";
+      providerName = "";
+      firstName = "";
+      lastName = "";
       age = 0;
-      smokingStatus = "N/A";
+      smokingStatus = "";
       height = 0;
       weight = 0;
    }
    
    /**
-      Constructor that accepts arguments.
-      @param num The policy number.
-      @param provName The provider name.
-      @param fname The policyholder's first name.
-      @param lname The policyholder's last name.
-      @param a The policyholder's age.
-      @param smoking The policyholder's smoking status.
-      @param h The policyholder's height.
-      @param w The policyholder's weight.
+   Constructor that accepts arguments.
+   @param num The policy number.
+   @param provName The provider name.
+   @param fname The policyholder's first name.
+   @param lname The policyholder's last name.
+   @param a The policyholder's age.
+   @param smoking The policyholder's smoking status.
+   @param h The policyholder's height.
+   @param w The policyholder's weight.
    */
    public Policy(int num, String provName, String fName, String lName, int a, String smoking, float h, float w)
    {
@@ -48,8 +48,8 @@ public class Policy
    }
    
    /**
-      The setNumber method sets the policy number.
-      @param num The policy number.
+   The setNumber method sets the policy number.
+   @param num The policy number.
    */
    public void setNumber(int num)
    {
@@ -57,8 +57,8 @@ public class Policy
    }
    
    /**
-      the setProviderName method sets the provider's name.
-      @param provName The provider name.
+   the setProviderName method sets the provider's name.
+   @param provName The provider name.
    */
    public void setProviderName(String provName)
    {
@@ -66,8 +66,8 @@ public class Policy
    }
    
    /**
-      The setFirstName method sets the policyholder's first name.
-      @param fName The policyholder's first name.
+   The setFirstName method sets the policyholder's first name.
+   @param fName The policyholder's first name.
    */
    public void setFirstName(String fName)
    {
@@ -75,8 +75,8 @@ public class Policy
    }
    
    /**
-      The setLastName method sets the policyholder's last name.
-      @param lName The policyholder's last name.
+   The setLastName method sets the policyholder's last name.
+   @param lName The policyholder's last name.
    */
    public void setLastName(String lName)
    {
@@ -84,8 +84,8 @@ public class Policy
    }
    
    /**
-      The setAge method sets the policyholder's age.
-      @param a The policyholder's age.
+   The setAge method sets the policyholder's age.
+   @param a The policyholder's age.
    */
    public void setAge(int a)
    {
@@ -93,8 +93,8 @@ public class Policy
    }
    
    /**
-      The setSmoker method sets the smoking status of the policy holder.
-      @param s The policyholder's smoking status.
+   The setSmoker method sets the smoking status of the policy holder.
+   @param s The policyholder's smoking status.
    */
    public void setSmoker(String s)
    {
@@ -102,8 +102,8 @@ public class Policy
    }
    
    /**
-      The setHeight method sets the policyholder's height.
-      @param h The policyholder's height.
+   The setHeight method sets the policyholder's height.
+   @param h The policyholder's height.
    */
    public void setHeight(float h)
    {
@@ -111,8 +111,8 @@ public class Policy
    }
    
    /**
-      The setWeight method sets the policyholder's weight.
-      @param w The policyholder's weight.
+   The setWeight method sets the policyholder's weight.
+   @param w The policyholder's weight.
    */
    public void setWeight(float w)
    {
@@ -120,8 +120,8 @@ public class Policy
    }
    
    /**
-      The getNumber method returns the policyholder's policy number.
-      @return The policy number.
+   The getNumber method returns the policyholder's policy number.
+   @return The policy number.
    */
    public int getNumber()
    {
@@ -129,8 +129,8 @@ public class Policy
    }
    
    /**
-      The getProviderName method returns the name of the provier.
-      @return The provider name.
+   The getProviderName method returns the name of the provier.
+   @return The provider name.
    */
    public String getProviderName()
    {
@@ -138,8 +138,8 @@ public class Policy
    }
    
    /**
-      The getFirstName method returns the policyholder's first name.
-      @return The policyholder's first name.
+   The getFirstName method returns the policyholder's first name.
+   @return The policyholder's first name.
    */
    public String getFirstName()
    {
@@ -147,8 +147,8 @@ public class Policy
    }
    
    /**
-      The getLastName method returns the policyholder's last name.
-      @return The policyholder's last name.
+   The getLastName method returns the policyholder's last name.
+   @return The policyholder's last name.
    */
    public String getLastName()
    {
@@ -156,8 +156,8 @@ public class Policy
    }
    
    /**
-      The getAge method returns the policyholder's age.
-      @return The policyholder's age.
+   The getAge method returns the policyholder's age.
+   @return The policyholder's age.
    */
    public int getAge()
    {
@@ -165,8 +165,8 @@ public class Policy
    }
    
    /**
-      The getSmokingStatus method returns the policyholder's smoking status.
-      @return The policyholder's smoking status.
+   The getSmokingStatus method returns the policyholder's smoking status.
+   @return The policyholder's smoking status.
    */
    public String getSmokingStatus()
    {
@@ -174,8 +174,8 @@ public class Policy
    }
    
    /**
-      The getHeight method returns the policyholder's height.
-      @return The policyholder's height.
+   The getHeight method returns the policyholder's height.
+   @return The policyholder's height.
    */
    public double getHeight()
    {
@@ -183,8 +183,8 @@ public class Policy
    }
    
    /**
-      The getWeight method returns the policyholder's weight.
-      @return The policyholder's weight.
+   The getWeight method returns the policyholder's weight.
+   @return The policyholder's weight.
    */
    public double getWeight()
    {
@@ -192,8 +192,8 @@ public class Policy
    }
    
    /**
-      The getBMI method calulates and returns the policyholder's BMI.
-      @return The policyholder's BMI.
+   The getBMI method calulates and returns the policyholder's BMI.
+   @return The policyholder's BMI.
    */
    public double getBMI()
    {
@@ -201,8 +201,8 @@ public class Policy
       return (weight * WEIGHT_MULTIPLIER) / (height * height);
    }
    /**
-      The getPrice method determines and returns the price of the polcy.
-      @return The price of the insurance policy.
+   The getPrice method determines and returns the price of the polcy.
+   @return The price of the insurance policy.
    */
    public double getPrice()
    {

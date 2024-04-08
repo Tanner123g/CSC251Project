@@ -21,11 +21,10 @@ public class Project_tanner_gleason
       // declare constants
       final String FILE_NAME = "PolicyInformation.txt";
       final String SMOKER = "smoker";
-      final String NONSMOKER = "non-smoker";
-      final int INCREMENT_AMT = 1;
       
       File file = new File(FILE_NAME); // create file object
       Scanner inputFile = new Scanner(file); // create scanner object with file object
+      
       ArrayList<Policy> policies = new ArrayList<Policy>(); // create array to store policy information
       
       // loop that repeats until file ends
