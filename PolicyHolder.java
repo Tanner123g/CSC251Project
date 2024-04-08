@@ -8,7 +8,7 @@ public class PolicyHolder
    private double weight;
    
    /**
-   No-arg constructor that explicitly initializes all fields
+   No-arg constructor that explicitly initializes all fields.
    */
    public PolicyHolder()
    {
@@ -21,7 +21,7 @@ public class PolicyHolder
    }
    
    /**
-   Constructor that accepts arguments for each field
+   Constructor that accepts arguments for each field.
    @param fname The policyholder's first name.
    @param lname The policyholder's last name.
    @param a The policyholder's age.
@@ -32,11 +32,25 @@ public class PolicyHolder
    public PolicyHolder(String fName, String lName, int a, String smoking, float h, float w)
    {
       firstName = fName;
-      lastName =  lName;
+      lastName = lName;
       age = a;
       smokingStatus = smoking;
       height = h;
       weight = w;
+   }
+   
+   /**
+   Constructor to copy a PolicyHolder object.
+   @param pHolder The policy holder object to be copied.
+   */
+   public PolicyHolder(PolicyHolder pHolder)
+   {
+      firstName = pHolder.firstName;
+      lastName = pHolder.lastName;
+      age = pHolder.age;
+      smokingStatus = pHolder.smokingStatus;
+      height = pHolder.height;
+      weight = pHolder.weight;
    }
    
    /**
@@ -148,12 +162,27 @@ public class PolicyHolder
    }
 
    /**
-      The getBMI method calulates and returns the policyholder's BMI.
-      @return The policyholder's BMI.
+   The getBMI method calulates and returns the policyholder's BMI.
+   @return The policyholder's BMI.
    */
    public double getBMI()
    {
       final double WEIGHT_MULTIPLIER = 703;
       return (weight * WEIGHT_MULTIPLIER) / (height * height);
+   }
+   
+   /**
+   The toString method returns the data stored in the PolicyHolder instance as a string.
+   @return The data stored in the Policy class as a string.
+   */
+   public String toString()
+   {
+      return String.format("Policyholder's First Name: " + firstName +
+             "\nPolicyholder's Last Name: " + lastName +
+             "\nPolicyholder's Age: " + age +
+             "\nPolicyholder's Smoking Status (Y/N): " + smokingStatus +
+             "\nPolicyholder's Height: " + height +
+             "\nPolicyholder's Weight: " + weight +
+             "\nPolicyHolder's BMI: %,.2f", getBMI()) ;
    }
 }
